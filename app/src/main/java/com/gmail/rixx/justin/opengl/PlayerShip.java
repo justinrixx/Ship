@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-public class Ship {
+public class PlayerShip {
 
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
@@ -47,7 +47,7 @@ public class Ship {
     // Set color with red, green, blue and alpha (opacity) values
     float color[] = { 0.51f, 0.98f, 0.02f, 1.0f };
 
-    public Ship() {
+    public PlayerShip() {
         // initialize vertex byte buffer for shape coordinates
         ByteBuffer bb = ByteBuffer.allocateDirect(
                 // (number of coordinate values * 4 bytes per float)

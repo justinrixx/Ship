@@ -17,7 +17,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private float[] mRotationMatrix = new float[16];
 
     private Triangle mTriangle;
-    private Ship mShip;
+    private PlayerShip mPlayerShip;
 
     public volatile float mAngle;
 
@@ -34,7 +34,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
         mTriangle = new Triangle();
-        mShip = new Ship();
+        mPlayerShip = new PlayerShip();
     }
 
     public void onDrawFrame(GL10 unused) {
@@ -61,7 +61,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
         // Draw triangle
         //mTriangle.draw(scratch);
-        mShip.draw(scratch);
+        mPlayerShip.draw(scratch);
     }
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {
