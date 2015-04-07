@@ -37,7 +37,7 @@ public class EnemyShip {
 
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
-    static float shipCoords[] = {   // in counterclockwise order:
+    static float shipCoords[] = {
             -0.2f, -0.3f, 0.1f,
             -0.3f, 0.0f, 0.1f,
             -0.5f, 0.0f, 0.1f,
