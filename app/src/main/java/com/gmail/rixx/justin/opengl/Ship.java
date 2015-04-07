@@ -38,10 +38,10 @@ public class Ship {
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
     static float shipCoords[] = {   // in counterclockwise order:
+            0.5f, -0.311004243f, 0.0f, // bottom left
             0.0f,  0.622008459f, 0.0f, // top
-            -0.5f, -0.311004243f, 0.0f, // bottom left
             0.0f, 0.0f, 0.0f,          // backside
-            0.5f, -0.311004243f, 0.0f  // bottom right
+            -0.5f, -0.311004243f, 0.0f  // bottom right
     };
 
     // Set color with red, green, blue and alpha (opacity) values
