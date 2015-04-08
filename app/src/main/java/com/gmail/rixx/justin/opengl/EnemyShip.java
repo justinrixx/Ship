@@ -1,6 +1,7 @@
 package com.gmail.rixx.justin.opengl;
 
 import android.opengl.GLES20;
+import android.opengl.Matrix;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -93,9 +94,12 @@ public class EnemyShip {
     private final int vertexCount = shipCoords.length / COORDS_PER_VERTEX;
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
-    public void draw(float[] mvpMatrix) { // pass in the calculated transformation matrix
+    public void draw(float[] mvpMatrix, float x, float y) { // pass in the calculated transformation matrix
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(mProgram);
+
+        // translate the matrix to where the x and y are
+        Matrix.translateM(mvpMatrix, 0, x, y, 0);
 
         // get handle to vertex shader's vPosition member
         mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition");
