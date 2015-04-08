@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 
 public class MainActivity extends Activity {
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
             setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
         }
 
-        /*
+
         @Override
         public boolean onTouchEvent(MotionEvent e) {
             // MotionEvent reports input details from the touch screen
@@ -77,6 +78,6 @@ public class MainActivity extends Activity {
             mPreviousX = x;
             mPreviousY = y;
             return true;
-        }*/
+        }
     }
 }

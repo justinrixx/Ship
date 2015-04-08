@@ -40,6 +40,9 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     public void onDrawFrame(GL10 unused) {
         float[] scratch = new float[16];
 
+        float x = .2f;
+        float y = .2f;
+
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
 
@@ -50,7 +53,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mViewMatrix, 0);
 
         // Create a rotation for the triangle
-        Matrix.setRotateM(mRotationMatrix, 0, -mAngle, 0, 0, -1.0f);
+        Matrix.setRotateM(mRotationMatrix, 0, -mAngle, x, y, -1.0f);
 
         // Combine the rotation matrix with the projection and camera view
         // Note that the mMVPMatrix factor *must be first* in order
@@ -58,7 +61,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         Matrix.multiplyMM(scratch, 0, mMVPMatrix, 0, mRotationMatrix, 0);
 
         // Draw triangle
-        mPlayerShip.draw(scratch, 0.0f, -0.4f);
+        mPlayerShip.draw(scratch, x, y);
     }
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {
